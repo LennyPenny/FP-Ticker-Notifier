@@ -2,7 +2,7 @@
 // @name         FP Ticker Notifier
 // @namespace    facepunch.com
 // @include       *facepunch.com/fp_ticker*
-// @version      0.1
+// @version      0.2
 // @description  Notifies you of new posts in threads you read while you have the ticker open
 // @author       Lennart Bernhardt (github.com/LennyPenny)
 // @grant        GM_notification
@@ -14,7 +14,7 @@
 
     console.log("Starting ticker notifier");
     var OldAddTickerPost = AddTickerPost;
-    setTimeout(1000, function() { //hope you have a fast enough connection
+    setTimeout(function() { //hope you have a fast enough connection
         AddTickerPost = function(post) {
             if (post.attributes.getNamedItem( "html" ).value.includes("Last Read"))
             {
@@ -32,5 +32,5 @@
             }
             OldAddTickerPost(post);
         };
-    });
+    }, 1000);
 })();
