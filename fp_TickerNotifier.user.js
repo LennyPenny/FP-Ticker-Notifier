@@ -5,6 +5,8 @@
 // @version      0.1
 // @description  Notifies you of new posts in threads you read while you have the ticker open 
 // @author       Lennart Bernhardt (github.com/LennyPenny)
+// @updateURL    https://github.com/LennyPenny/FP-Ticker-Notifier/raw/master/fp_TickerNotifier.user.js
+// @downloadURL  https://github.com/LennyPenny/FP-Ticker-Notifier/raw/master/fp_TickerNotifier.user.js
 // @grant        GM_notification
 // @grant        GM_openInTab
 // ==/UserScript==
