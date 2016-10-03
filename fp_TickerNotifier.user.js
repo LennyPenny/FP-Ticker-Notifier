@@ -5,8 +5,6 @@
 // @version      0.1
 // @description  Notifies you of new posts in threads you read while you have the ticker open 
 // @author       Lennart Bernhardt (github.com/LennyPenny)
-// @updateURL    https://github.com/LennyPenny/FP-Ticker-Notifier/raw/master/fp_TickerNotifier.user.js
-// @downloadURL  https://github.com/LennyPenny/FP-Ticker-Notifier/raw/master/fp_TickerNotifier.user.js
 // @grant        GM_notification
 // @grant        GM_openInTab
 // ==/UserScript==
@@ -16,7 +14,7 @@
 
     console.log("Starting ticker notifier");
     var OldAddTickerPost = AddTickerPost;
-    setTimeout(1000, function() { //hope you have a fast enough connection 
+    setTimeout(function() {
         AddTickerPost = function(post) {
             if (post.attributes.getNamedItem( "html" ).value.includes("Last Read"))
             {
@@ -34,5 +32,5 @@
             }
             OldAddTickerPost(post);
         };
-    });
+    }, 1000);
 })();
