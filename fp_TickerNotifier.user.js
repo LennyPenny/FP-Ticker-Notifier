@@ -2,9 +2,11 @@
 // @name         FP Ticker Notifier
 // @namespace    facepunch.com
 // @include       *facepunch.com/fp_ticker*
-// @version      0.2
+// @version      0.3
 // @description  Notifies you of new posts in threads you read while you have the ticker open
 // @author       Lennart Bernhardt (github.com/LennyPenny)
+// @updateURL    https://github.com/LennyPenny/FP-Ticker-Notifier/raw/master/fp_TickerNotifier.user.js
+// @downloadURL  https://github.com/LennyPenny/FP-Ticker-Notifier/raw/master/fp_TickerNotifier.user.js
 // @grant        GM_notification
 // @grant        GM_openInTab
 // ==/UserScript==
@@ -26,7 +28,7 @@
                 var links = el.getElementsByTagName("a");
 
                 if (links !== undefined)
-                    GM_notification(links[links.length-2].innerHTML, "New post!", null, function() {
+                    GM_notification(links[links.length-2].innerHTML, "New post!", "https://facepunch.com/fp/forums/6.png", function() {
                         GM_openInTab(links[links.length-1].href);
                     });
             }
