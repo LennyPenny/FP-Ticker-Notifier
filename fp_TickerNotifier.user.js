@@ -18,8 +18,7 @@
     var OldAddTickerPost = AddTickerPost;
     setTimeout(function() { //hope you have a fast enough connection
         AddTickerPost = function(post) {
-            if (post.attributes.getNamedItem( "html" ).value.includes("Last Read"))
-            {
+            if (post.attributes.getNamedItem( "html" ).value.includes("Last Read")) {
                 console.log("new post!");
 
                 //this is probably a shitty way to do this
